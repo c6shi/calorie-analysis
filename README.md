@@ -82,6 +82,8 @@ This is an overlaid histogram showing the distribution of recipes with the `low-
 | 4.0 - 4.5         | 235.6  | 299.2  |  359.3  |  388.3  | 440.85 |
 | 4.5 - 5.0         | 215.5  | 293.6  |  348.5  |  386.3  | 444.6  |
 
+<iframe src="assets/pivot_bars.html" width=800 height=600 frameBorder=0></iframe>
+
 There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. 
 
 ---
@@ -116,8 +118,8 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 ## Hypothesis Testing
 We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. 
 
-- \\( H_0 \\): The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
-- \\( H_1 \\): The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
+- $H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
+- $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
 - test statistic: absolute difference in medians
 - significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
@@ -125,6 +127,7 @@ We conducted a permutation test on `n_ingredients` (categorized by "many ingredi
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in medians under the null hypothesis is statistically significant. Thus, the number of ingredients in a recipe may depend on the number of calories in a recipe. 
 
 Honorable mention:
+
 <div class="table-wrapper">
 
 | name                      |     id |   minutes |   contributor_id | submitted   | tags                                                                                                                                                                                                                 | nutrition                                 |   n_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | description                                                                                                                                                                                                                         | ingredients        |   n_ingredients |   average_rating |   calories |   total_fat_% |   sugars_% |   sodium_% |   protein_% |   saturated_fat_% |   total_carbohydrate_% | tags_list                                                                                                                                                                                                              | low-calorie   |
