@@ -122,11 +122,11 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 ## Hypothesis Testing
 We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. 
 
-- $H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
-- $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
+- $$H_0$$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
+- $$H_1$$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
 - test statistic: absolute difference in medians
-- significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
+- significance level: $$\alpha = 0.01$$
+- conclusion: since the p-value $$= 0.0 < \alpha = 0.01$$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in medians under the null hypothesis is statistically significant. Thus, the number of ingredients in a recipe may depend on the number of calories in a recipe. 
 
