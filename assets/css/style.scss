@@ -3,7 +3,22 @@
 
 @import "{{ site.theme }}";
 
-.inner {
-	max-width: 1400px;
+div.shell {
+	width: 1000px;
 }
 
+header {
+	max-width: 1000px;
+}
+
+section#downloads {
+	width: 1000px;
+}
+
+span.banner-fix{
+	width: 1000px;
+}
+
+footer {
+	max-width: 1000px;
+}
