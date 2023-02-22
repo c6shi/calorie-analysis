@@ -42,6 +42,7 @@ Relevant columns include:
 5. Since the `average_rating` column was a quantitative continuous variable, we decided to bin the values into 0.5-width intervals of ratings and treat it as a categorical variable in the `avg_rating_bins` column.
 
 #### Clean Dataset:
+
 | name                                 |     id |   minutes |   n_steps |   n_ingredients |   average_rating |   calories |   total_fat_% |   sugars_% |   sodium_% |   protein_% |   saturated_fat_% |   total_carbohydrate_% | avg_rating_bins   |
 |:-------------------------------------|-------:|----------:|----------:|----------------:|-----------------:|-----------:|--------------:|-----------:|-----------:|------------:|------------------:|-----------------------:|:------------------|
 | 1 brownies in the world    best ever | 333281 |        40 |        10 |               9 |                4 |      138.4 |            10 |         50 |          3 |           3 |                19 |                      6 | 4.0 - 4.5         |
@@ -65,6 +66,7 @@ This is a group of box plots showing the distribution of calories for each avera
 This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. 
 
 #### Interesting Aggregates
+
 | avg_rating_bins   |1-5 steps|6-10 steps|11-15 steps|16-20 steps|20+ steps|
 |:------------------|-------:|-------:|--------:|--------:|-------:|
 | 1.0 - 1.5         | 178.2  | 258.1  |  303.35 |  404.3  | 481.5  |
