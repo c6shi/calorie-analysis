@@ -74,6 +74,7 @@ This is a overlayed histogram showing the distribution of recipes with the `low-
 | 3.5 - 4.0         | 248.9  | 306.4  |  332.9  |  364.4  | 459    |
 | 4.0 - 4.5         | 235.6  | 299.2  |  359.3  |  388.3  | 440.85 |
 | 4.5 - 5.0         | 215.5  | 293.6  |  348.5  |  386.3  | 444.6  |
+
 There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. 
 
 ## Assessment of Missingness
