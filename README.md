@@ -47,6 +47,8 @@ Relevant columns include:
 
 #### Clean Dataset:
 
+<div class="table-wrapper" markdown="block">
+
 | name                                 |     id |   minutes |   n_steps |   n_ingredients |   average_rating |   calories |   total_fat_% |   sugars_% |   sodium_% |   protein_% |   saturated_fat_% |   total_carbohydrate_% | avg_rating_bins   |
 |:-------------------------------------|-------:|----------:|----------:|----------------:|-----------------:|-----------:|--------------:|-----------:|-----------:|------------:|------------------:|-----------------------:|:------------------|
 | 1 brownies in the world    best ever | 333281 |        40 |        10 |               9 |                4 |      138.4 |            10 |         50 |          3 |           3 |                19 |                      6 | 4.0 - 4.5         |
@@ -54,6 +56,8 @@ Relevant columns include:
 | 412 broccoli casserole               | 306168 |        40 |         6 |               9 |                5 |      194.8 |            20 |          6 |         32 |          22 |                36 |                      3 | 4.5 - 5.0         |
 | millionaire pound cake               | 286009 |       120 |         7 |               7 |                5 |      878.3 |            63 |        326 |         13 |          20 |               123 |                     39 | 4.5 - 5.0         |
 | 2000 meatloaf                        | 475785 |        90 |        17 |              13 |                5 |      267   |            30 |         12 |         12 |          29 |                48 |                      2 | 4.5 - 5.0         |
+
+</div>
 
 #### Univariate Analysis
 <iframe src="assets/calorie_histogram.html" width=800 height=600 frameBorder=0></iframe>
@@ -118,15 +122,16 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 ## Hypothesis Testing
 We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. 
 
-- $H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
-- $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
-- test statistic: absolute difference in medians
-- significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
+$H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
+$H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
+test statistic: absolute difference in medians
+significance level: $\alpha = 0.01$
+conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in medians under the null hypothesis is statistically significant. Thus, the number of ingredients in a recipe may depend on the number of calories in a recipe. 
 
-Honorable mention:
+---
+#### Honorable mention:
 
 <div class="table-wrapper" markdown="block">
 
