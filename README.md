@@ -36,15 +36,15 @@ Relevant columns include:
 #### Data Cleaning Steps:
 1. We left merged the recipes and interactions datasets and filled all ratings of 0 with `np.nan`. This is appropriate to do because it is not necessarily the case that the actual review/rating was 0-stars (i.e. the worst rating possible), but the reviewer could be asking a question or state their rating in the review text; additionally, some reviewers stated that the site was not allowing them to click the stars (glitch in the system), and therefore was forced to not provide a rating. 
 2. Using the merged dataset, we found the average rating per recipe and added this to the recipes dataset. We then proceed to use the recipes dataset with the average rating column.
-3. We added a `calories` column using the value from the `nutrition` column. 
-4. We identified most of the numerical data type columns from the recipes dataset that were relevant to our analysis. These are: `name`, `id`, `minutes`, `n_steps`, `n_ingredients`, `average_rating`, and `calories`. We then proceed to use a dataframe consisting of these columns. 
+3. We added all of the individual nutritional values as their own column using the values from the `nutrition` column. 
+4. We identified most of the numerical data type columns from the recipes dataset that were relevant to our analysis. These are: `name`, `id`, `minutes`, `n_steps`, `n_ingredients`, `average_rating`, `calories`, `total_fat_%`, `sugars_%`, `sodium_%`, `protein_%`, `saturated_fat_%`, and `total_carbohydrate_%`. We then proceed to use a dataframe consisting of these columns. 
 5. Since the `average_rating` column was a quantitative continuous variable, we decided to bin the values into 0.5-width intervals of ratings and treat it as a categorical variable in the `avg_rating_bins` column.
 
 #### Clean Dataset:
 (insert our html of clean dataframe)
 
 #### Univariate Analysis
-(univariate analysis 1 plot)
+<iframe src="assets/calorie_histogram.html" width=800 height=600 frameBorder=0></iframe>
 This is a histogram showing the proportion of recipes with a certain range of calories. Each bin is of width 50 calories. The graph is heavily skewed right, due to huge outliers, such as a recipe with ~45,000 calories (wow!). Most of the recipes have 0 to 1,500 calories. 
 
 (univariate analysis 2 plot)
