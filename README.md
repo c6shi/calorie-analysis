@@ -4,7 +4,7 @@ This is a project for the Winter 2023 offering of DSC 80 at UC San Diego, conduc
 Members: Kurumi Kaneko, Candus Shi
 
 ## Introduction
-For this project we were provided two datasets from food.com. 
+For this project we were provided two datasets from [food.com](food.com). 
 One was about recipes with numerical and textual data 
 like minutes, number of steps/ingredients, and tags. 
 The other dataset was about interactions which include ratings and reviews 
@@ -31,6 +31,7 @@ Relevant columns include:
 - `recipe_id`: a unique number representing the recipe,
 - `rating`: a rating (1 to 5 stars) for the recipe given by the reviewer.
 
+---
 ## Cleaning and EDA
 
 #### Data Cleaning Steps:
@@ -61,7 +62,7 @@ This is a bar chart showing the frequency of recipes with an average rating betw
 This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution.
 
 <iframe src="assets/calories_tag_histogram.html" width=800 height=600 frameBorder=0></iframe>
-This is a overlayed histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. 
+This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. 
 
 #### Interesting Aggregates
 | avg_rating_bins   |1-5 steps|6-10 steps|11-15 steps|16-20 steps|20+ steps|
@@ -77,6 +78,7 @@ This is a overlayed histogram showing the distribution of recipes with the `low-
 
 There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. 
 
+---
 ## Assessment of Missingness
 #### NMAR
 We believe that the `average_rating` column is NMAR. The values of `average_rating` may be missing if any rating for a recipe was 0 (which we then replaced with `np.nan`). Thus, it depends on the individual ratings itself.
@@ -104,6 +106,7 @@ MCAR on `sodium_%`
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is not statistically significant. This test does not provide any useful information about our question.
 
+---
 ## Hypothesis Testing
 We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. 
 
