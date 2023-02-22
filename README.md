@@ -57,7 +57,7 @@ This is a histogram showing the proportion of recipes with a certain range of ca
 This is a bar chart showing the frequency of recipes with an average rating between a certain range. Most recipes are decent; they are on average rated between 4.0 and 5.0 stars.
 
 #### Bivariate Analysis
-<iframe src="assets/calorie_rating_box.html" width=800 height=800 frameBorder=0></iframe>
+<iframe src="assets/calorie_rating_box.html" width=800 height=850 frameBorder=0></iframe>
 This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution.
 
 <iframe src="assets/calories_tag_histogram.html" width=800 height=600 frameBorder=0></iframe>
