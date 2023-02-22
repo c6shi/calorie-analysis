@@ -74,6 +74,7 @@ MAR on `calories`
 - $H_0$: The missingness of `average_rating` **does not depend** on `calories`.
 - $H_1$: The missingness of `average_rating` **does depend** on `calories`. 
 - test statistic: absolute difference in means
+- significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.003 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **depends** on `calories`. 
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is statistically significant. Thus, the number of calories in a recipe affects the missingness of `average_rating`.
@@ -82,6 +83,7 @@ MCAR on `sodium_%`
 - $H_0$: The missingness of `average_rating` **does not depend** on `sodium_%`.
 - $H_1$: The missingness of `average_rating` **does depend** on `sodium_%`. 
 - test statistic: absolute difference in means
+- significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.184 > \alpha = 0.01$, we fail to reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **does not depend** on `sodium_%`. 
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is not statistically significant. This test does not provide any useful information about our question.
@@ -92,6 +94,7 @@ We conducted a permutation test on `n_ingredients` (categorized by "many ingredi
 - $H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
 - $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
 - test statistic: absolute difference in medians
+- significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in medians under the null hypothesis is statistically significant. Thus, the number of ingredients in a recipe may depend on the number of calories in a recipe. 
