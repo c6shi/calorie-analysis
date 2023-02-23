@@ -70,12 +70,12 @@ This is a bar chart showing the frequency of recipes with an average rating betw
 
 #### Bivariate Analysis
 <iframe src="assets/calorie_rating_box.html" width=1000 height=850 frameBorder=0></iframe>
-This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution.
+This is a group of box plots showing the distribution of calories for each average rating bin. Observe that there are many outliers especially for higher ratings, but most of the bins have a similar distribution.
 <iframe src="assets/calorie_rating_box_zoom.html" width=1000 height=850 frameBorder=0></iframe>
-The box plot above shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
+The box plot above shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner. The interquartile range of all bins is around 150 calories to 500 calories. Note that there is a lot more data for 4.0-4.5 and 4.5-5.0 bins as shown in the bar chart in the above section. This means that there is an uneven distribution of recipes among the average rating bins, so it may not be correct to compare the box plots equally on their own.
 
 <iframe src="assets/calories_tag_histogram.html" width=1000 height=600 frameBorder=0></iframe>
-This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag.
+This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. has a lower variance) compared to the distribution of recipes without the tag.
 <iframe src="assets/calories_tag_histogram_zoom.html" width=1000 height=600 frameBorder=0></iframe>
 The histogram above shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
 
@@ -94,20 +94,22 @@ Below is a pivot table of median number of calories per number of steps and aver
 | 4.0 - 4.5         | 235.6  | 299.2  |  359.3  |  388.3  | 440.85 |
 | 4.5 - 5.0         | 215.5  | 293.6  |  348.5  |  386.3  | 444.6  |
 
+There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. This is more easily visualized in the bar chart below.
+
 <iframe src="assets/pivot_bars.html" width=1000 height=600 frameBorder=0></iframe>
-There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. 
+
 
 ---
 ## Assessment of Missingness
 #### NMAR
-We believe that the `average_rating` column is NMAR. The values of `average_rating` may be missing if any rating for a recipe was 0 (which we then replaced with `np.nan`). Thus, it depends on the individual ratings itself.
+We believe that the `average_rating` column is NMAR. The values of `average_rating` may be missing if any rating for a recipe was 0 (which we then replaced with `np.nan` in the data cleaning steps) as this would affect the computation of the average because taking the average of values where at least one value is nan results in an average that is also nan. Thus, it depends on the individual ratings itself which in turn makes the missingness of `average_rating` dependent on its values. Hence, it is NMAR. 
 
 The `average_rating` column could become MAR if we had included the `rating` column from the interactions dataset. 
 
 #### MAR/MCAR
 The column with the most missing values was the `average_rating` column (2,609 missing values!). We determined that it was MAR on `calories` and MCAR on `sodium_%`. 
 
-MAR on `calories`
+**MAR on `calories`**
 - $H_0$: The missingness of `average_rating` **does not depend** on `calories`.
 - $H_1$: The missingness of `average_rating` **does depend** on `calories`. 
 - test statistic: absolute difference in means
@@ -118,7 +120,8 @@ MAR on `calories`
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is statistically significant. Thus, the number of calories in a recipe affects the missingness of `average_rating`.
 
-MCAR on `sodium_%`
+
+**MCAR on `sodium_%`**
 - $H_0$: The missingness of `average_rating` **does not depend** on `sodium_%`.
 - $H_1$: The missingness of `average_rating` **does depend** on `sodium_%`. 
 - test statistic: absolute difference in means
@@ -131,15 +134,17 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 
 ---
 ## Hypothesis Testing
-We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. 
+We conducted a permutation test on `n_ingredients` (categorized by "many ingredients") and `calories`. We define "many ingredients" to be `n_ingredients` > 10. We are doing this test to see whether the number of ingredients in a recipe can tell us if such recipes tend to have higher calories. We chose 10 ingredients as our threshold by looking at the distribution of number of ingredients (in the histogram below) and eye-balling an approximate balancing point. 
 
-$$H_0$$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
-$$H_1$$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients.
-- test statistic: absolute difference in medians
-- significance level: $$\alpha = 0.01$$
-- conclusion: since the p-value $$= 0.0 < \alpha = 0.01$$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
+<iframe src="assets/many_ingredients_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
-Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in medians under the null hypothesis is statistically significant. Thus, the number of calories in a recipe may depend on the number of ingredients in a recipe. 
+- $H_0$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
+- $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. Specifically, recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. 
+- test statistic: difference in group medians
+- significance level: $\alpha = 0.01$
+- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
+
+Given our dataset, the chance of getting the observed statistic or a more extreme difference in group medians under the null hypothesis is statistically significant. We can also say that recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. Thus, to answer our main question, recipes with higher calories may have a higher number of ingredients. 
 
 ---
 #### Honorable mention:
