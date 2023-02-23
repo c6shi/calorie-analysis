@@ -110,11 +110,11 @@ The `average_rating` column could become MAR if we had included the `rating` col
 The column with the most missing values was the `average_rating` column (2,609 missing values!). We determined that it was MAR on `calories` and MCAR on `sodium_%`. 
 
 **MAR on `calories`**
-- $H_0$: The missingness of `average_rating` **does not depend** on `calories`.
-- $H_1$: The missingness of `average_rating` **does depend** on `calories`. 
+- \\(H_0\\): The missingness of `average_rating` **does not depend** on `calories`.
+- \\(H_1\\): The missingness of `average_rating` **does depend** on `calories`. 
 - test statistic: absolute difference in means
-- significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **depends** on `calories`. 
+- significance level: \\(\alpha = 0.01\\)
+- conclusion: since the p-value \\(= 0.0 < \alpha = 0.01\\), we reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **depends** on `calories`. 
 
 <iframe src="assets/mar_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
@@ -122,11 +122,11 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 
 
 **MCAR on `sodium_%`**
-- $H_0$: The missingness of `average_rating` **does not depend** on `sodium_%`.
-- $H_1$: The missingness of `average_rating` **does depend** on `sodium_%`. 
+- \\(H_0\\): The missingness of `average_rating` **does not depend** on `sodium_%`.
+- \\(H_1\\): The missingness of `average_rating` **does depend** on `sodium_%`. 
 - test statistic: absolute difference in means
-- significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.894 > \alpha = 0.01$, we fail to reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **does not depend** on `sodium_%`. 
+- significance level: \\(\alpha = 0.01\\)
+- conclusion: since the p-value \\(= 0.894 > \alpha = 0.01\\), we fail to reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **does not depend** on `sodium_%`. 
 
 <iframe src="assets/mcar_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
@@ -138,11 +138,11 @@ We conducted a permutation test on `n_ingredients` (categorized by "many ingredi
 
 <iframe src="assets/many_ingredients_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
-- $$H_0$$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
+- \\(H_0\\): The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
 - \\(H_1\\): The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. Specifically, recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. 
 - test statistic: difference in group medians
-- significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
+- significance level: \\(\alpha = 0.01\\)
+- conclusion: since the p-value \\(= 0.0 < \alpha = 0.01\\), we reject the \\(H_0\\) and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
 
 <iframe src="assets/permutation_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
