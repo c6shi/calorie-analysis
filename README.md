@@ -144,6 +144,8 @@ We conducted a permutation test on `n_ingredients` (categorized by "many ingredi
 - significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
 
+<iframe src="assets/permutation_histogram.html" width=1000 height=600 frameBorder=0></iframe>
+
 Given our dataset, the chance of getting the observed statistic or a more extreme difference in group medians under the null hypothesis is statistically significant. We can also say that recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. Thus, to answer our main question, recipes with higher calories may have a higher number of ingredients. 
 
 ---
