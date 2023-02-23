@@ -75,6 +75,8 @@ This is an overlaid histogram showing the distribution of recipes with the `low-
 
 #### Interesting Aggregates
 
+Below is a pivot table of median number of calories per number of steps and average rating bins. 
+
 | avg_rating_bins   |1-5 steps|6-10 steps|11-15 steps|16-20 steps|20+ steps|
 |:------------------|-------:|-------:|--------:|--------:|-------:|
 | 1.0 - 1.5         | 178.2  | 258.1  |  303.35 |  404.3  | 481.5  |
@@ -135,8 +137,8 @@ Given our dataset, the chance of getting the observed statistic or a more extrem
 
 <div class="table-wrapper" markdown="block">
 
-| name                      |     id |   minutes |   contributor_id | submitted   | tags                                                              | nutrition                                 |   n_steps | steps                                                                                                                                                      | description                                                       | ingredients        |   n_ingredients |   average_rating |
-|:--------------------------|-------:|----------:|-----------------:|:------------|:------------------------------------------------------------------|:------------------------------------------|----------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|----------------:|-----------------:|
-| how to preserve a husband | 447963 |   1051200 |           576273 | 2011-02-01  | ['time-to-make', ..., 'for-1-or-2', ..., 'low-in-something', ...] | [407.4, 57.0, 50.0, 1.0, 7.0, 115.0, 5.0] |         9 | ['be careful in your selection', "don't choose too young", ..., 'keep warm with a steady fire of domestic devotion and serve with peaches and cream', ...] | found this in a local wyoming cookbook "a collection of recipes using wine, cordials, and beer" from the broadway liquor store by sara gradin (by the way this particular cookbook was typed up and price on cover was .50 cents!!) | ['cream', 'peach'] |               2 |                5 |
+| name                      |     id |   minutes |   contributor_id | submitted   | tags                                                              | nutrition                                 |   n_steps | steps                                                                                                                           | ingredients        |   n_ingredients |   average_rating |
+|:--------------------------|-------:|----------:|-----------------:|:------------|:------------------------------------------------------------------|:------------------------------------------|----------:|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------|----------------:|-----------------:|
+| how to preserve a husband | 447963 |   1051200 |           576273 | 2011-02-01  | ['time-to-make', ..., 'for-1-or-2', ..., 'low-in-something', ...] | [407.4, 57.0, 50.0, 1.0, 7.0, 115.0, 5.0] |         9 | [..., "don't choose too young", ..., 'keep warm with a steady fire of domestic devotion and serve with peaches and cream', ...] | ['cream', 'peach'] |               2 |                5 |
 
 </div>
