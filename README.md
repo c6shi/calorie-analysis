@@ -113,7 +113,9 @@ MAR on `calories`
 - $H_1$: The missingness of `average_rating` **does depend** on `calories`. 
 - test statistic: absolute difference in means
 - significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.003 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **depends** on `calories`. 
+- conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **depends** on `calories`. 
+
+<iframe src="assets/mar_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is statistically significant. Thus, the number of calories in a recipe affects the missingness of `average_rating`.
 
@@ -122,7 +124,9 @@ MCAR on `sodium_%`
 - $H_1$: The missingness of `average_rating` **does depend** on `sodium_%`. 
 - test statistic: absolute difference in means
 - significance level: $\alpha = 0.01$
-- conclusion: since the p-value $= 0.184 > \alpha = 0.01$, we fail to reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **does not depend** on `sodium_%`. 
+- conclusion: since the p-value $= 0.894 > \alpha = 0.01$, we fail to reject the $H_0$ and say that **it seems like** the missingness of `average_rating` **does not depend** on `sodium_%`. 
+
+<iframe src="assets/mcar_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
 Given our dataset, the chance of getting the observed statistic or a more extreme absolute difference in means under the null hypothesis is not statistically significant. This test does not provide any useful information about our question.
 
