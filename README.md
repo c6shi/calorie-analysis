@@ -139,7 +139,7 @@ We conducted a permutation test on `n_ingredients` (categorized by "many ingredi
 <iframe src="assets/many_ingredients_histogram.html" width=1000 height=600 frameBorder=0></iframe>
 
 - $$H_0$$: The distribution of calories for recipes with 10 or fewer ingredients is **the same** as the distribution of calories for recipes with more than 10 ingredients.
-- $H_1$: The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. Specifically, recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. 
+- \\(H_1\\): The distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. Specifically, recipes with more than 10 ingredients have more calories than recipes with 10 or fewer ingredients. 
 - test statistic: difference in group medians
 - significance level: $\alpha = 0.01$
 - conclusion: since the p-value $= 0.0 < \alpha = 0.01$, we reject the $H_0$ and say that **it seems like** the distribution of calories for recipes with 10 or fewer ingredients is **different** from the distribution of calories for recipes with more than 10 ingredients. 
