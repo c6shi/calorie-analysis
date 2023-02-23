@@ -61,23 +61,23 @@ Relevant columns include:
 
 #### Univariate Analysis
 <iframe src="assets/calorie_histogram.html" width=1000 height=600 frameBorder=0></iframe>
-This is a histogram showing the proportion of recipes with a certain range of calories. Each bin is of width 50 calories. The graph is heavily skewed right, due to huge outliers, such as a recipe with ~45,000 calories (wow!). Most of the recipes have 0 to 2,500 calories. The histogram below shows the bulk of the data (0 to 2,500 calories) in a more visually appealing manner.
-
+This is a histogram showing the proportion of recipes with a certain range of calories. Each bin is of width 50 calories. The graph is heavily skewed right, due to huge outliers, such as a recipe with ~45,000 calories (wow!). Most of the recipes have 0 to 2,500 calories.
 <iframe src="assets/calorie_histogram_zoom.html" width=1000 height=600 frameBorder=0></iframe>
+The histogram above shows the bulk of the data (0 to 2,500 calories) in a more visually appealing manner.
 
 <iframe src="assets/average_rating_bar.html" width=1000 height=600 frameBorder=0></iframe>
 This is a bar chart showing the frequency of recipes with an average rating between a certain range. Most recipes are decent; they are on average rated between 4.0 and 5.0 stars.
 
 #### Bivariate Analysis
 <iframe src="assets/calorie_rating_box.html" width=1000 height=850 frameBorder=0></iframe>
-This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution. The box plot below shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
-
+This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution.
 <iframe src="assets/calorie_rating_box_zoom.html" width=1000 height=850 frameBorder=0></iframe>
+The box plot above shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
 
 <iframe src="assets/calories_tag_histogram.html" width=1000 height=600 frameBorder=0></iframe>
-This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. The histogram below shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
-
+This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag.
 <iframe src="assets/calories_tag_histogram_zoom.html" width=1000 height=600 frameBorder=0></iframe>
+The histogram above shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
 
 #### Interesting Aggregates
 
@@ -95,7 +95,6 @@ Below is a pivot table of median number of calories per number of steps and aver
 | 4.5 - 5.0         | 215.5  | 293.6  |  348.5  |  386.3  | 444.6  |
 
 <iframe src="assets/pivot_bars.html" width=1000 height=600 frameBorder=0></iframe>
-
 There is a general trend in an increase of median calories as the number of steps increases. This indicates that recipes with more steps seem to have higher calories according to this dataset. Among each interval of steps, the average rating does not vary much in median of calories, but for each average rating bin (except for 1.5-2.0) there is an increase in median calories with an increase in steps. 
 
 ---
