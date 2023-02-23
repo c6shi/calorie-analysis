@@ -43,7 +43,7 @@ Relevant columns include:
 2. Using the merged dataset, we found the average rating per recipe and added this to the recipes dataset. We then proceed to use the recipes dataset with the average rating column.
 3. We added all of the individual nutritional values as their own column using the values from the `nutrition` column. 
 4. We identified most of the numerical data type columns from the recipes dataset that were relevant to our analysis. These are: `name`, `id`, `minutes`, `n_steps`, `n_ingredients`, `average_rating`, `calories`, `total_fat_%`, `sugars_%`, `sodium_%`, `protein_%`, `saturated_fat_%`, and `total_carbohydrate_%`. We then proceed to use a dataframe consisting of these columns. 
-5. Since the `average_rating` column was a quantitative continuous variable, we decided to bin the values into 0.5-width intervals of ratings and treat it as a categorical variable in the `avg_rating_bins` column.
+5. Since the `average_rating` column was a quantitative continuous variable, we decided to bin the values into 0.5-width intervals of ratings and treat it as a categorical variable in the `avg_rating_bins` column. One limitation of binning average rating is that we lose data granularity so the following analysis may not produce the most accurate results. 
 
 #### Clean Dataset:
 
@@ -61,17 +61,23 @@ Relevant columns include:
 
 #### Univariate Analysis
 <iframe src="assets/calorie_histogram.html" width=1000 height=600 frameBorder=0></iframe>
-This is a histogram showing the proportion of recipes with a certain range of calories. Each bin is of width 50 calories. The graph is heavily skewed right, due to huge outliers, such as a recipe with ~45,000 calories (wow!). Most of the recipes have 0 to 1,500 calories. 
+This is a histogram showing the proportion of recipes with a certain range of calories. Each bin is of width 50 calories. The graph is heavily skewed right, due to huge outliers, such as a recipe with ~45,000 calories (wow!). Most of the recipes have 0 to 2,500 calories. The histogram below shows the bulk of the data (0 to 2,500 calories) in a more visually appealing manner.
+
+<iframe src="assets/calorie_histogram_zoom.html" width=1000 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/average_rating_bar.html" width=1000 height=600 frameBorder=0></iframe>
 This is a bar chart showing the frequency of recipes with an average rating between a certain range. Most recipes are decent; they are on average rated between 4.0 and 5.0 stars.
 
 #### Bivariate Analysis
 <iframe src="assets/calorie_rating_box.html" width=1000 height=850 frameBorder=0></iframe>
-This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution.
+This is a group of box plots showing the distribution of calories for each average rating bin. Observe many outliers especially for higher ratings, but the majority of each bin has a similar distribution. The box plot below shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
+
+<iframe src="assets/calorie_rating_box_zoom.html" width=1000 height=850 frameBorder=0></iframe>
 
 <iframe src="assets/calories_tag_histogram.html" width=1000 height=600 frameBorder=0></iframe>
-This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. 
+This is an overlaid histogram showing the distribution of recipes with the `low-calorie` tag compared to recipes without the `low-calorie` tag. As one might expect, the distribution of the `low-calorie` distribution is tighter around its center (i.e. a lower variance) compared to the distribution of recipes without the tag. The histogram below shows the bulk of the data (0 to 1,500 calories) in a more visually appealing manner.
+
+<iframe src="assets/calories_tag_histogram_zoom.html" width=1000 height=600 frameBorder=0></iframe>
 
 #### Interesting Aggregates
 
